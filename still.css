@@ -8,7 +8,7 @@ body{
 
 .head{
   width: 100%;
-  height: 30rem;
+  height: 25rem;
   background: center no-repeat url('Group.png');
   background-size:  contain;
   margin-top: 6rem;
@@ -49,7 +49,7 @@ body{
 }
 
 a{
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color:white;
 
 
