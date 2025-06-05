@@ -79,3 +79,49 @@ a{
   margin-left: 10px;
   width: 70%;
 }
+.viski {
+  position: relative; /* нужно для позиционирования .objem */
+  height: auto;
+  width: 90%;
+  padding-top: 1rem;
+  margin: 5%;
+  border: 2px solid #F76491;
+  background-color: #121126;
+}
+
+.viski span {
+  display: block;
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.viski p {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.viski .name {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.viski .price {
+  text-align: right;
+  margin-right: 1rem;
+}
+
+/* Иконка в правом верхнем углу */
+.objem {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 2rem;
+  height: 2rem;
+  background: center no-repeat url('Group 104.png');
+  background-size: contain;
+}
