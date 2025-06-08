@@ -18,7 +18,7 @@ body{
   display: flex;
   align-items: center;
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 2.2rem;
   width: 100%;
   line-height: 3rem;
   font-size: 2rem;
@@ -26,7 +26,9 @@ body{
   text-align: center;
 
 }
-
+#top{
+  margin-top: 10rem;
+}
 .zodiac::before,
 .zodiac::after{
   content: "";
@@ -102,17 +104,19 @@ a{
   justify-content: space-between;
   margin: 4px 0;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .viski .name {
   text-align: left;
   margin-left: 1rem;
+  font-size: 1.4rem;
 }
 
 .viski .price {
   text-align: right;
   margin-right: 1rem;
+  font-size: 1.4rem;
 }
 
 /* Иконка в правом верхнем углу */
