@@ -5,14 +5,37 @@ body{
   background-color: #121023;
   height: 250rem;
 }
-
+.vibor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Drinks{
+  width: 11rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  background-color: #121023;
+  color: white;
+  font-size: 1.7rem;
+  margin: 1rem;
+  border: solid 1px  #F76491;
+  border-radius: 12px;
+}
+a {
+  text-decoration: none;
+}
 .head{
   width: 100%;
   height: 23rem;
   background: center no-repeat url('Group.png');
   background-size:  contain;
   margin-top: 6rem;
-
 }
 .zodiac{
   display: flex;
@@ -24,11 +47,11 @@ body{
   font-size: 2rem;
   color: white;
   text-align: center;
-
 }
 #top{
   margin-top: 10rem;
 }
+
 .zodiac::before,
 .zodiac::after{
   content: "";
@@ -70,6 +93,59 @@ a{
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 20px;
+  border: solid 1px #F76491;
+}
+#ar{
+  background: center no-repeat url('aries.png');
+  background-size:  contain;
+}
+#west{
+  background: center no-repeat url('West.png');
+  background-size:  contain;
+}
+#aq{
+  background: center no-repeat url('aq.png');
+  background-size:  contain;
+}
+#lib{
+  background: center no-repeat url('lib.png');
+  background-size:  contain;
+}
+#gem{
+  background: center no-repeat url('gem.png');
+  background-size:  contain;
+}
+#scr{
+  background: center no-repeat url('scr.png');
+  background-size:  contain;
+}
+#can{
+  background: center no-repeat url('can.png');
+  background-size:  contain;
+}
+#virgo{
+  background: center no-repeat url('virgo.png');
+  background-size:  contain;
+}
+#sag{
+  background: center no-repeat url('sag.png');
+  background-size:  contain;
+}
+#tau{
+  background: center no-repeat url('tau.png');
+  background-size:  contain;
+}
+#leo{
+  background: center no-repeat url('leo.png');
+  background-size:  contain;
+}
+#cap{
+  background: center no-repeat url('cap.png');
+  background-size:  contain;
+}
+#pis{
+  background: center no-repeat url('pis.png');
+  background-size:  contain;
 }
 .cocktail {
   display: flex;
