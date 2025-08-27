@@ -97,55 +97,55 @@ a{
 }
 #ar{
   background: center no-repeat url('aries.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #west{
   background: center no-repeat url('West.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #aq{
   background: center no-repeat url('aq.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #lib{
   background: center no-repeat url('lib.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #gem{
   background: center no-repeat url('gem.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #scr{
   background: center no-repeat url('scr.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #can{
   background: center no-repeat url('can.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #virgo{
   background: center no-repeat url('virgo.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #sag{
   background: center no-repeat url('sag.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #tau{
   background: center no-repeat url('tau.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #leo{
   background: center no-repeat url('leo.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #cap{
   background: center no-repeat url('cap.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 #pis{
   background: center no-repeat url('pis.png');
-  background-size:  contain;
+  background-size:  cover;
 }
 .cocktail {
   display: flex;
