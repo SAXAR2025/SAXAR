@@ -3,7 +3,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: #121023;
-  width: 31rem;
+  
   height: 250rem;
 }
 .vibor {
@@ -37,4 +37,78 @@ a {
   background: center no-repeat url('Group.png');
   background-size:  contain;
   margin-top: 6rem;
+}
+.food{
+  position: relative; /* нужно для позиционирования .objem */
+  height: auto;
+  width: 90%;
+  padding-top: 1rem;
+  margin: 5%;
+  border: 2px solid #F76491;
+  background-color: #121126;
+}
+.vid{
+  display: block;
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.zodiac{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 2.2rem;
+  width: 100%;
+  line-height: 3rem;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+#top{
+  margin-top: 10rem;
+}
+
+.zodiac::before,
+.zodiac::after{
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: #F76491; /* цвет линии */
+}
+.zodiac span {
+  padding: 10px; /* отступы от линий */
+  padding-right: 0;
+}
+.zcoc{
+  height:auto;
+  width: 90%;
+  text-align: left;
+  padding-top:3rem;
+  margin: 5%;
+  border: 2px solid #F76491;
+  line-height: 0.8;
+}
+
+a{
+  font-size: 1.1rem;
+  color:white;
+
+
+}
+.name{
+  color: #F76491;
+}
+.sostav{
+  font-size: 1rem;
+  color: white;
+}
+.fotocock {
+  background-color: white;
+  width: 9rem;
+  height: 8rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 20px;
+  border: solid 1px #F76491;
 }

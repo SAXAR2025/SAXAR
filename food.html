@@ -1,16 +1,162 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="">
-      <link rel="stylesheet" href="food.css">
 
-    </head>
-    <body>
-      <div class="vibor">
+      
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="still.css">
+
+
+    
+   <style>
+    .lang-switch {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 100;
+    }
+    .lang-switch button {
+      margin-left: 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+    .fotocock {
+      width: 200px;
+      height: 150px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .fotocock img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  </style>
+<body>
+    <div class="vibor">
         <a href='index.html'><div class="Drinks">DRINKS</div></a>
         <div class="Drinks">FOOD</div>
       </div>
         <div class='head'></div>
-    </body>
+  <div class="lang-switch">
+    <button onclick="setLang('lv')">LV</button>
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+
+  <div id="menu"></div>
+
+  <script>
+    const translations = {
+      lv: {
+        categories: { uzkodas:"UZKODAS", zupa:"ZUPA", karstie:"KARSTIE ĒDIENI", deserti:"DESERTI" },
+        dishes: [
+          {cat:"uzkodas", title:"Poke “Bīstamā saikne”", desc:"Poke bļoda ar zuša fileju, rīsiem, avokado, mango un unagi mērci.", img:"images/poke1.jpg"},
+          {cat:"uzkodas", title:"Poke “Vieglais flirts”", desc:"Pokē bļoda ar tīģergarnelēm, mango, gurķi un pikanto majonēzi.", img:"images/poke2.jpg"},
+          {cat:"uzkodas", title:"Poke “Rozā noslēpums”", desc:"Poke bļoda ar lasi, wakame, avokado un yuzu mērci.", img:"images/poke3.jpg"},
+          {cat:"uzkodas", title:"Antipasta “Itāļu romāns”", desc:"Antipasta plate ar prošuto, olīvēm, kaltētiem tomātiem un dažādiem sieriem.", img:"images/antipasta.jpg"},
+          {cat:"uzkodas", title:"Austeres “Jūras skūpsts”", desc:"Svaigas austeres ar šalot mignonette mērci.", img:"images/oysters.jpg"},
+          {cat:"uzkodas", title:"Garneles “Kārdinājums pa telefonu”", desc:"Ķiploku garneles ar omāru sviestu.", img:"images/shrimps.jpg"},
+
+          {cat:"zupa", title:"Tom Jams “Aizliegtais buljons”", desc:"Asa Taizemes zupa ar garnelēm, sēnēm un citronzāli.", img:"images/tomyam.jpg"},
+
+          {cat:"karstie", title:"Liellopu filejsteiks Mignon «Gultā ar glāzi vīna»", desc:"Grilēts filejsteiks ar cukini un ķiršu tomātiem baltvīna glazūrā.", img:"images/steak1.jpg"},
+          {cat:"karstie", title:"Pīle «Saldais grēks»", desc:"Lēni gatavota pīles krūtiņa medus un pekanriekstu mērcē uz kraukšķīgiem kāpostiem.", img:"images/duck.jpg"},
+          {cat:"karstie", title:"Jūras samts «Izģērb ar acīm»", desc:"Asara fileja ar Vierge mērci un krēmīgiem ņoki.", img:"images/fish.jpg"},
+          {cat:"karstie", title:"Steiks (Vegan) «Kokosriekstu baudījums»", desc:"Grilēts kāpostu steiks ar melnajām lēcām, kokosriekstu krēmu un parmezānu.", img:"images/vegansteak.jpg"},
+          {cat:"karstie", title:"Jūras ķemmītes “Uz augstpapēžiem”", desc:"Apceptas jūras ķemmītes ar sparģeļiem un trifeļu aioli.", img:"images/scallops.jpg"},
+
+          {cat:"deserti", title:"Siera kūka “Saldais grēks”", desc:"Krēmīga siera kūka ar pistāciju krēmu un Dubaijas datelēm.", img:"images/cheesecake.jpg"}
+        ]
+      },
+
+      ru: {
+        categories: { uzkodas:"ЗАКУСКИ", zupa:"СУП", karstie:"ГОРЯЧЕЕ", deserti:"ДЕСЕРТЫ" },
+        dishes: [
+          {cat:"uzkodas", title:"Поке “Опасная связь”", desc:"Боул с угрём, рисом, авокадо, манго и соусом унаги.", img:"images/poke1.jpg"},
+          {cat:"uzkodas", title:"Поке “Лёгкий флирт”", desc:"Боул с тигровыми креветками, манго, огурцом и пикантным майонезом.", img:"images/poke2.jpg"},
+          {cat:"uzkodas", title:"Поке “Розовая тайна”", desc:"Боул с лососем, вакаме, авокадо и соусом юдзу.", img:"images/poke3.jpg"},
+          {cat:"uzkodas", title:"Антипаста “Итальянский роман”", desc:"Антипаста — тарелка с прошутто, оливками, вялеными томатами и разными сырами.", img:"images/antipasta.jpg"},
+          {cat:"uzkodas", title:"Устрицы “Морской поцелуй”", desc:"Свежие устрицы с шалотным соусом минонетт.", img:"images/oysters.jpg"},
+          {cat:"uzkodas", title:"Креветки “Соблазн по телефону”", desc:"Чесночные креветки с омарным маслом.", img:"images/shrimps.jpg"},
+
+          {cat:"zupa", title:"Том Ям “Запретный бульон”", desc:"Острый тайский суп с креветками, грибами и лимонной травой.", img:"images/tomyam.jpg"},
+
+          {cat:"karstie", title:"Стейк из говядины Mignon «В постели с бокалом вина»", desc:"Гриль стейк с цукини и черри в винной глазури.", img:"images/steak1.jpg"},
+          {cat:"karstie", title:"Утка «Сладкий грех»", desc:"Медленно приготовленная грудка утки в мёде и соусе с пеканом.", img:"images/duck.jpg"},
+          {cat:"karstie", title:"Морской бархат «Раздень глазами»", desc:"Филе окуня с соусом Vierge и кремовыми ньокки.", img:"images/fish.jpg"},
+          {cat:"karstie", title:"Стейк (Vegan) «Кокосовое удовольствие»", desc:"Гриль стейк из капусты с черной чечевицей, кокосовым кремом и пармезаном.", img:"images/vegansteak.jpg"},
+          {cat:"karstie", title:"Гребешки «На высоких каблуках»", desc:"Жареные морские гребешки с спаржей и трюфельным айоли.", img:"images/scallops.jpg"},
+
+          {cat:"deserti", title:"Чизкейк «Сладкий грех»", desc:"Кремовый чизкейк с фисташковым кремом и финиками.", img:"images/cheesecake.jpg"}
+        ]
+      },
+
+      en: {
+        categories: { uzkodas:"STARTERS", zupa:"SOUP", karstie:"HOT DISHES", deserti:"DESSERTS" },
+        dishes: [
+          {cat:"uzkodas", title:"Poke “Dangerous Connection”", desc:"Bowl with eel, rice, avocado, mango and unagi sauce.", img:"images/poke1.jpg"},
+          {cat:"uzkodas", title:"Poke “Light Flirt”", desc:"Bowl with tiger prawns, mango, cucumber and spicy mayonnaise.", img:"images/poke2.jpg"},
+          {cat:"uzkodas", title:"Poke “Pink Secret”", desc:"Bowl with salmon, wakame, avocado and yuzu sauce.", img:"images/poke3.jpg"},
+          {cat:"uzkodas", title:"Antipasta “Italian Romance”", desc:"Antipasta plate with prosciutto, olives, dried tomatoes and cheeses.", img:"images/antipasta.jpg"},
+          {cat:"uzkodas", title:"Oysters “Sea Kiss”", desc:"Fresh oysters with shallot mignonette sauce.", img:"images/oysters.jpg"},
+          {cat:"uzkodas", title:"Shrimps “Temptation by Phone”", desc:"Garlic shrimps with lobster butter.", img:"images/shrimps.jpg"},
+
+          {cat:"zupa", title:"Tom Yam “Forbidden Broth”", desc:"Spicy Thai soup with shrimps, mushrooms and lemongrass.", img:"images/tomyam.jpg"},
+
+          {cat:"karstie", title:"Beef Filet Mignon “In Bed with a Glass of Wine”", desc:"Grilled filet steak with zucchini and cherry tomatoes in white wine glaze.", img:"images/steak1.jpg"},
+          {cat:"karstie", title:"Duck “Sweet Sin”", desc:"Slow-cooked duck breast in honey and pecan sauce.", img:"images/duck.jpg"},
+          {cat:"karstie", title:"Sea Velvet “Undress with Your Eyes”", desc:"Perch fillet with Vierge sauce and creamy gnocchi.", img:"images/fish.jpg"},
+          {cat:"karstie", title:"Steak (Vegan) “Coconut Pleasure”", desc:"Grilled cabbage steak with black lentils, coconut cream and parmesan.", img:"images/vegansteak.jpg"},
+          {cat:"karstie", title:"Scallops “On High Heels”", desc:"Pan-seared scallops with asparagus and truffle aioli.", img:"images/scallops.jpg"},
+
+          {cat:"deserti", title:"Cheesecake “Sweet Sin”", desc:"Creamy cheesecake with pistachio cream and dates.", img:"images/cheesecake.jpg"}
+        ]
+      }
+    };
+
+    function renderMenu(lang) {
+      const t = translations[lang];
+      const menuDiv = document.getElementById("menu");
+      menuDiv.innerHTML = "";
+
+      const categories = ["uzkodas","zupa","karstie","deserti"];
+      categories.forEach(cat => {
+        const catDiv = document.createElement("div");
+        catDiv.className = "zodiac";
+        catDiv.innerHTML = `<span>${t.categories[cat]}<span>`;
+        menuDiv.appendChild(catDiv);
+
+        t.dishes.filter(d => d.cat === cat).forEach(dish => {
+          const dishDiv = document.createElement("div");
+          dishDiv.className = "cocktail";
+          dishDiv.innerHTML = `
+            <div class="text-block">
+              <a>${dish.title}</a>
+              <p class='sostav'>${dish.desc}</p>
+            </div>
+            <div class="fotocock">
+              <img src="${dish.img || ''}" alt="${dish.title}">
+            </div>
+          `;
+          menuDiv.appendChild(dishDiv);
+        });
+      });
+    }
+
+    renderMenu('lv');
+
+    function setLang(lang) {
+      renderMenu(lang);
+    }
+  </script>
+
+</body>
 </html>
